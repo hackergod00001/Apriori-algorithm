@@ -2,6 +2,7 @@
 
 ## 1) Give limitations of Apriori algorithms
 Answer:
+    
     Apriori Algorithm can be slow.
     The algorithms scans the database too many time which reduces its overall performance.
      i.e. it is not an efficient approach for large number of datasets
