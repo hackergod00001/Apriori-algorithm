@@ -17,6 +17,8 @@ Answer:
 
       The root node represents null while the lower nodes represent the itemsets. The association of the nodes with the lower nodes that is the itemsets with the other itemsets are maintained while forming the tree.
       
+      
+      
 ## 3) Explain FP tree Algorithms with one example
 Answer:
     
