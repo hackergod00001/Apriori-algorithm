@@ -10,7 +10,8 @@ Answer:
      
 ## 2) Write different variations of FP tree algorithm
 Answer:
-     FP Tree
+      
+      FP Tree
       Frequent Pattern Tree is a tree-like structure that is made with the initial itemsets of the database. The purpose of the FP tree is to mine the most frequent pattern. Each node of the FP tree represents an item of the itemset.
 
       The root node represents null while the lower nodes represent the itemsets. The association of the nodes with the lower nodes that is the itemsets with the other itemsets are maintained while forming the tree.
@@ -64,21 +65,21 @@ Answer:
         Table 2
 
         Item	Count
-        I1	  4
-        I2	  5
-        I3	  4
-        I4	  4
-        I5	  2
+        I1	    4
+        I2	    5
+        I3	    4
+        I4	    4
+        I5	    2
       
       2. Sort the itemset in descending order.
 
         Table 3
 
         Item	Count
-        I2	  5
-        I1	  4
-        I3	  4
-        I4	  4
+        I2	    5
+        I1	    4
+        I3	    4
+        I4	    4
       
       3. Build FP Tree
 
@@ -104,54 +105,40 @@ Answer:
         For I1, the prefix path would be: {I2:4} this will generate a single node FP-tree: {I2:4} and frequent patterns are generated: {I2, I1:4}.
         
         Item	   Conditional Pattern Base	      Conditional FP-tree	           Frequent Patterns Generated
-        I4	     {I2,I1,I3:1},{I2,I3:1}	        {I2:2, I3:2}	                 {I2,I4:2},{I3,I4:2},{I2,I3,I4:2}
-        I3	     {I2,I1:3},{I2:1}	              {I2:4, I1:3}	                 {I2,I3:4}, {I1:I3:3}, {I2,I1,I3:3}
-        I1	     {I2:4}	                        {I2:4}	                       {I2,I1:4}
+        I4	      {I2,I1,I3:1},{I2,I3:1}	      {I2:2, I3:2}	                   {I2,I4:2},{I3,I4:2},{I2,I3,I4:2}
+        I3	      {I2,I1:3},{I2:1}	              {I2:4, I1:3}	                   {I2,I3:4}, {I1:I3:3}, {I2,I1,I3:3}
+        I1	      {I2:4}	                      {I2:4}	                       {I2,I1:4}
       The diagram given below depicts the conditional FP tree associated with the conditional node I3.
 
       conditional FP tree associated with conditional node I3
       
    ![image](https://user-images.githubusercontent.com/54675828/133130664-898d6c66-4583-45a7-a59f-b12f50941d00.png)
 
-  ##  Advantages Of FP Growth Algorithm
+  ###  Advantages Of FP Growth Algorithm
    - This algorithm needs to scan the database only twice when compared to Apriori which scans the transactions for each iteration.
    - The pairing of items is not done in this algorithm and this makes it faster.
    - The database is stored in a compact version in memory.
    - It is efficient and scalable for mining both long and short frequent patterns.
       
-  ## Disadvantages Of FP-Growth Algorithm
+  ### Disadvantages Of FP-Growth Algorithm
       FP Tree is more cumbersome and difficult to build than Apriori.
       It may be expensive.
       When the database is large, the algorithm may not fit in the shared memory.
       
       
-   ## FP Growth vs Apriori
-      FP Growth        	                                                           Apriori
-      
-      Pattern Generation	
-      FP growth generates pattern by constructing a FP tree	                       Apriori generates pattern by pairing the items into singletons, pairs and triplets.
-      
-      Candidate Generation	
-      There is no candidate generation	                                           Apriori uses candidate generation
-      
-      Process	
-      The process is faster as compared to Apriori. The runtime of process increases linearly with increase in number of itemsets.	     The process is comparatively slower than FP Growth, the runtime increases exponentially with increase in number of itemsets
-      
-      Memory Usage	
-      A compact version of database is saved	                                     The candidates combinations are saved in memory
-      
-      ECLAT
-      The above method, Apriori and FP growth, mine frequent itemsets using horizontal data format.                       ECLAT is a method of mining frequent itemsets using the vertical data format. It will transform the data in the horizontal data format into the vertical format.
+   ### FP Growth vs Apriori
+   
+   ![image](https://user-images.githubusercontent.com/54675828/133135638-bff65fb8-c464-4084-9c74-d9e7fe4266cf.png)
 
       For Example, Apriori and FP growth use:
 
       Transaction	List of items
-      T1	I1,I2,I3
-      T2	I2,I3,I4
-      T3	I4,I5
-      T4	I1,I2,I4
-      T5	I1,I2,I3,I5
-      T6	I1,I2,I3,I4
+      T1	        I1,I2,I3
+      T2	        I2,I3,I4
+      T3	        I4,I5
+      T4	        I1,I2,I4
+      T5	        I1,I2,I3,I5
+      T6	        I1,I2,I3,I4
       The ECLAT will have the format of the table as:
 
       Item	Transaction Set
