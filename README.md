@@ -17,6 +17,36 @@ Answer:
 
       The root node represents null while the lower nodes represent the itemsets. The association of the nodes with the lower nodes that is the itemsets with the other itemsets are maintained while forming the tree.
       
+      As the popularity and efficiency of FP-Growth Algorithm contributes with many studies that propose variations to improve its performance. some of them are briefly described belowz:
+      
+    - DynFP-Growth Algorithm
+      The DynFP-Growth, has focused in improving the FP-Tree algorithm construction based on two observed problems:
+            1.) The resulting FP-tree is not unique for the same “logical” database;
+            2.) The process needs two complete scans of the database.
+      An important feature in this approach is that it's not necessary to rebuild the FP-Tree when the actual database is updated. It's only needed to execute the algorithm again taking into consideration the new transactions and the stored FP-Tree.
+
+      Another adaptation proposed, because of the dynamic reordering process, is a modification in the original structures, by replacing the single linked list with a doubly linked list for linking the tree nodes to the header and adding a master-table to the same header. 
+      
+      - FP-Bonsai Algorithm
+      The FP-Bonsai improve the FP-Growth performance by reducing (pruning) the FP-Tree using the ExAnte data-reduction technique. The pruned FP-Tree was called FP-Bonsai.
+      
+      - AFOPT Algorithm
+      Investigating the FP-Growth algorithm performance Liu proposed the AFOPT algorithm in. This algorithm aims at improving the FP-Growth performance in four perspectives:
+
+           - Item Search Order: when the search space is divided, all items are sorted in some order. The number of the conditional databases constructed can differ very much using different items search orders;
+           - Conditional Database Representation: the traversal and construction cost of a conditional database heavily depends on its representation;
+           - Conditional Database Construction Strategy: constructing every conditional database physically can be expensive affecting the mining cost of each individual conditional database;
+           - Tree Traversal Strategy: the traversal cost of a tree is minimal using top-down traversal strategy.
+       
+       - NONORDFP Algorithm
+       The Nonordfp algorithm was motivated by the running time and the space required for the FP-Growth algorithm. The theoretical difference is the main data structure (FP-Tree), which is more compact and which is not needed to rebuild it for each conditional step. A compact, memory efficient representation of an FP-tree by using Trie data structure, with memory layout that allows faster traversal, faster allocation, and optionally projection was introduced. 
+       
+       - FP-Growth* Algorithm
+       This algorithm was proposed by Grahne et al., and is based in his conclusion about the usage of CPU time to compute frequent item sets using FP-Growth. They observed that 80% of CPU time was used for traversing FP-Trees. Therefore, they used an array-based data structure combined with the FP-Tree data structure to reduce the traversal time, and incorporates several optimization techniques.
+       
+       - PPV, PrePost, and FIN Algorithm
+       These three algorithms were proposed by Deng et al., and are based on three novel data structures called Node-list, N-list, and Nodeset respectively for facilitating the mining process of frequent itemsets. They are based on a FP-tree with each node encoding with pre-order traversal and post-order traversal. Compared with Node-lists, N-lists and Nodesets are more efficient. This causes the efficiency of PrePost and FIN is higher than that of PPV.
+
       
       
 ## 3) Explain FP tree Algorithms with one example
